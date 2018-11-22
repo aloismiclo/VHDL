@@ -6,10 +6,10 @@ set_property PACKAGE_PIN Y9 [get_ports {CLK}];  # "H"
 # ----------------------------------------------------------------------------
 # JA Pmod - Bank 13
 # ---------------------------------------------------------------------------- 
-set_property PACKAGE_PIN Y11  [get_ports {S[0]}];  # "JA1"
-set_property PACKAGE_PIN AA11 [get_ports {S[1]}];  # "JA2"
-set_property PACKAGE_PIN Y10  [get_ports {S[2]}];  # "JA3"
-set_property PACKAGE_PIN AA9  [get_ports {S[3]}];  # "JA4"
+#set_property PACKAGE_PIN Y11  [get_ports {S[0]}];  # "JA1"
+#set_property PACKAGE_PIN AA11 [get_ports {S[1]}];  # "JA2"
+#set_property PACKAGE_PIN Y10  [get_ports {S[2]}];  # "JA3"
+#set_property PACKAGE_PIN AA9  [get_ports {S[3]}];  # "JA4"
 #set_property PACKAGE_PIN AB11 [get_ports {JA7}];  # "JA7"
 #set_property PACKAGE_PIN AB10 [get_ports {JA8}];  # "JA8"
 #set_property PACKAGE_PIN AB9  [get_ports {JA9}];  # "JA9"
@@ -22,10 +22,10 @@ set_property PACKAGE_PIN T22 [get_ports {S[0]}];  # "LD0"
 set_property PACKAGE_PIN T21 [get_ports {S[1]}];  # "LD1"
 set_property PACKAGE_PIN U22 [get_ports {S[2]}];  # "LD2"
 set_property PACKAGE_PIN U21 [get_ports {S[3]}];  # "LD3"
-#set_property PACKAGE_PIN V22 [get_ports {LD4}];  # "LD4"
-#set_property PACKAGE_PIN W22 [get_ports {LD5}];  # "LD5"
-#set_property PACKAGE_PIN U19 [get_ports {LD6}];  # "LD6"
-#set_property PACKAGE_PIN U14 [get_ports {LD7}];  # "LD7"
+set_property PACKAGE_PIN V22 [get_ports {S[4]}];  # "LD4"
+set_property PACKAGE_PIN W22 [get_ports {S[5]}];  # "LD5"
+set_property PACKAGE_PIN U19 [get_ports {S[6]}];  # "LD6"
+set_property PACKAGE_PIN U14 [get_ports {S[7]}];  # "LD7"
 
 # ----------------------------------------------------------------------------
 # User Push Buttons - Bank 34

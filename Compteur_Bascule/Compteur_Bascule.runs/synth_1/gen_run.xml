@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1542899004">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1542905759">
   <File Type="PA-TCL" Name="Global.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Global_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Global_reports.tcl"/>
@@ -17,7 +17,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Clock_Div.vhd">
+    <File Path="$PSRCDIR/sources_1/new/Dec3v8.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/N_Divider.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -25,6 +31,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Global.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Clock_Div.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -42,7 +55,7 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../zedboard_master_XDC_RevC_D_v3.xdc">
+    <File Path="$PPRDIR/../../../../../Vivado_Project/zedboard_master_XDC_RevC_D_v3.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

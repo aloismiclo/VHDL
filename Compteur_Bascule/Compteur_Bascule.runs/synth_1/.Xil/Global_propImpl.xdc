@@ -1,15 +1,7 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/alois/Vivado_Project/Compteur_Bascule/Compteur_Bascule.srcs/constrs_1/new/PinOut.xdc rfile:../../../Compteur_Bascule.srcs/constrs_1/new/PinOut.xdc id:1} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/alois/Vivado_Project/zedboard_master_XDC_RevC_D_v3.xdc rfile:../../../../zedboard_master_XDC_RevC_D_v3.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/alois/Documents/Perso/M2_SE/VHDL/Compteur_Bascule/Compteur_Bascule.srcs/constrs_1/new/PinOut.xdc rfile:../../../Compteur_Bascule.srcs/constrs_1/new/PinOut.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/alois/Vivado_Project/zedboard_master_XDC_RevC_D_v3.xdc rfile:../../../../../../../../Vivado_Project/zedboard_master_XDC_RevC_D_v3.xdc id:2} [current_design]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y9 [get_ports {CLK}];  # "H"
-set_property src_info {type:XDC file:1 line:9 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN Y11  [get_ports {S[0]}];  # "JA1"
-set_property src_info {type:XDC file:1 line:10 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN AA11 [get_ports {S[1]}];  # "JA2"
-set_property src_info {type:XDC file:1 line:11 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN Y10  [get_ports {S[2]}];  # "JA3"
-set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN AA9  [get_ports {S[3]}];  # "JA4"
 set_property src_info {type:XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN T22 [get_ports {S[0]}];  # "LD0"
 set_property src_info {type:XDC file:1 line:22 export:INPUT save:INPUT read:READ} [current_design]
@@ -18,6 +10,14 @@ set_property src_info {type:XDC file:1 line:23 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN U22 [get_ports {S[2]}];  # "LD2"
 set_property src_info {type:XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN U21 [get_ports {S[3]}];  # "LD3"
+set_property src_info {type:XDC file:1 line:25 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V22 [get_ports {S[4]}];  # "LD4"
+set_property src_info {type:XDC file:1 line:26 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W22 [get_ports {S[5]}];  # "LD5"
+set_property src_info {type:XDC file:1 line:27 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U19 [get_ports {S[6]}];  # "LD6"
+set_property src_info {type:XDC file:1 line:28 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U14 [get_ports {S[7]}];  # "LD7"
 set_property src_info {type:XDC file:1 line:35 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN N15 [get_ports {RST}];  # "BTNL"
 set_property src_info {type:XDC file:1 line:36 export:INPUT save:INPUT read:READ} [current_design]

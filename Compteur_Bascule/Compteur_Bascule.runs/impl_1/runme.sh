@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/alois/Vivado_Project/Compteur_Bascule/Compteur_Bascule.runs/impl_1'
+HD_PWD='C:/Users/alois/Documents/Perso/M2_SE/VHDL/Compteur_Bascule/Compteur_Bascule.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
