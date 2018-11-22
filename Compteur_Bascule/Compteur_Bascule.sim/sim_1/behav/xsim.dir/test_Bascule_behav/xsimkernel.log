@@ -1,0 +1,5 @@
+Running: xsim.dir/test_Bascule_behav/xsimk.exe -simmode gui -wdb test_Bascule_behav.wdb -simrunnum 0 -socket 50709
+Design successfully loaded
+Design Loading CPU Usage: 312 ms
+Simulation completed
+Simulation CPU Usage: 421 ms

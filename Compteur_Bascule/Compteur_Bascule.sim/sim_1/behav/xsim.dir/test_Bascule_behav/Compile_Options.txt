@@ -1,0 +1,1 @@
+--debug "typical" --relax -L "xil_defaultlib" -L "secureip" --snapshot "test_Bascule_behav" --prj "C:/Users/alois/Vivado_Project/Compteur_Bascule/Compteur_Bascule.sim/sim_1/behav/test_Bascule.prj" "xil_defaultlib.test_Bascule" 
