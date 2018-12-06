@@ -1,4 +1,0 @@
-NumberHits:0
-Timestamp: Thu Dec 06 13:42:28 UTC 2018
-VLNV: xilinx.com:user:N_Divider:1.0
-SynthRuntime: 42
