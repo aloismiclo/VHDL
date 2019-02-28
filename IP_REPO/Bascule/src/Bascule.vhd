@@ -38,6 +38,7 @@ entity Bascule is
     Port ( H : in STD_LOGIC;
            RST : in STD_LOGIC;
            PREP : in STD_LOGIC;
+           UPDOWN : in STD_LOGIC;
            E : in STD_LOGIC_VECTOR (3 downto 0);
            S : out STD_LOGIC_VECTOR (3 downto 0));
 end Bascule;
@@ -54,8 +55,11 @@ begin
     else if (H'event and H = '1') then -- rising_edge(H);
         if (PREP = '1') then           --chargement synchrone;
             tmp <= E;
-        else
+        else if (UPDOWN = '1') then
             tmp <= tmp + 1;            -- incrementation synchrone
+        else 
+            tmp <= tmp - 1;
+            end if;
         end if;
     end if;
 end if;

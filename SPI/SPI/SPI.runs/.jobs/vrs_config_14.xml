@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="SPI_SPI_Master_0_0_synth_1" LaunchDir="C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPI/SPI/SPI.runs/SPI_SPI_Master_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="SPI_Compteur_8bits_0_0_synth_1" LaunchDir="C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPI/SPI/SPI.runs/SPI_Compteur_8bits_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

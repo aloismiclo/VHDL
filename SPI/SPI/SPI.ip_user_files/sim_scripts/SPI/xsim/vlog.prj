@@ -1,0 +1,11 @@
+verilog xil_defaultlib --include "../../../../SPI.srcs/sources_1/bd/SPI/ipshared/85a3" \
+"../../../../SPI.srcs/sources_1/bd/SPI/ip/SPI_clk_wiz_0_0/SPI_clk_wiz_0_0_clk_wiz.v" \
+"../../../../SPI.srcs/sources_1/bd/SPI/ip/SPI_clk_wiz_0_0/SPI_clk_wiz_0_0.v" \
+"../../../../SPI.srcs/sources_1/bd/SPI/sim/SPI.v" \
+"../../../../SPI.srcs/sources_1/bd/SPI/ip/SPI_xlconstant_0_0/sim/SPI_xlconstant_0_0.v" \
+"../../../../SPI.srcs/sources_1/bd/SPI/ip/SPI_xlconcat_0_0/sim/SPI_xlconcat_0_0.v" \
+"../../../../SPI.srcs/sources_1/bd/SPI/ip/SPI_xlconstant_1_0/sim/SPI_xlconstant_1_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

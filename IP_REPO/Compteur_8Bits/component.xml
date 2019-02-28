@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>Compteur_8bits</spirit:name>
+  <spirit:version>1.1</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>Compteur_8bits</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>aad06ae8</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>Compteur_8bits</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>569964e5</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>Compteur_8bits_TB</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>ee0a33a3</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>84d958e6</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>H</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>RST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DOWNUP</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>S</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.N&apos;)) - 1)">15</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>N</spirit:name>
+        <spirit:displayName>N</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.N" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">16</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/Compteur_8bits.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_aad06ae8</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/Compteur_8bits.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/Compteur_8bits.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/Compteur_8bits_TB.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_testbench</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/Compteur_8bits_v1_1.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_84d958e6</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>Compteur_8bits_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">Compteur_8bits_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>N</spirit:name>
+      <spirit:displayName>N</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.N" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">16</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>Compteur_8bits_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:upgrades>
+        <xilinx:canUpgradeFrom>xilinx.com:user:Compteur_8bits:1.0</xilinx:canUpgradeFrom>
+        <xilinx:canUpgradeFrom>xilinx.com:user:Compteur:1.0</xilinx:canUpgradeFrom>
+      </xilinx:upgrades>
+      <xilinx:coreCreationDateTime>2019-02-14T13:19:52Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="xilinx.com:user:Compteur_8bits:1.0_ARCHIVE_LOCATION">c:/Users/alois/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70687ba2_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6662f2f9_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d883f16_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@253b1514_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b1d8590_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2881cf58_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67377b8a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b34da46_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@236c2175_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@565810fd_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b42ea5c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56148ea2_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@497c6953_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6761ae60_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47fa3067_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e604db4_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fa12ccd_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68ad2a9e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e06bb79_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c95d70a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@159c2495_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c91bcfc_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a621a4e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a6ff9da_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2240552e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11abb418_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a0e1eb1_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c5d7a20_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f45f12f_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@113a3106_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66abb703_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f23ce19_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@dedd0f7_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16da1082_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@286eb8bd_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15611055_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@172ffd50_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28afdf6f_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d06926a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@783a24b1_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c5ea033_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6dad8332_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@458f198e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5744dbb5_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b5dad9c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2feca934_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bf5f2e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45847d2d_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12947a4b_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28962f1c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@530146e7_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f75a602_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fc59f68_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15d2a3e6_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b31fd9d_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f9b27e8_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ca5e1a8_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@675cd5ee_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@582abfb7_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a265e45_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a64c88_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47af3d97_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2aa4e699_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43fccea7_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68fc5cda_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e4c7ed_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d93360f_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@ef8ee77_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d8bf892_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@623c69c7_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41ef9b13_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@541891ef_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b42954a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@316b5a06_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@788f37ff_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7eb0bd91_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e302a68_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ae25cb5_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@553e5005_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@23533de2_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fce4f55_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e20e8dc_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f3f78f_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bcfbf4_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37d88be9_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a4fa16b_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17811253_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d6bd22c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57e1695a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cfa275a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@596d14ee_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65568bc6_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4be1675d_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b9b5d1c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ab24c1d_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3af1e730_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@654501d6_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31af9eca_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a30abe_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3759f0c1_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46383c89_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78e753b0_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20a3ce36_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d98a9f0_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5662bae_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d8a3770_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d10063b_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10bcde02_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@607ecc9_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cfeaac7_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c94017a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@411c7b07_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3245cb85_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c45975f_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5da1d37_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48f603a5_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22d196a8_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/Compteur_8Bits</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="bb6bfa4f"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0109ce88"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="0be5071f"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="037d3fac"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="233c1152"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

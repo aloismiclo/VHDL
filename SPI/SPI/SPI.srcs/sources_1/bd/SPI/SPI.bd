@@ -1,0 +1,299 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xDD47CA2A55196F8C",
+      "device": "xc7z020clg484-1",
+      "name": "SPI",
+      "synth_flow_mode": "None",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "clk_wiz_0": "",
+      "N_Divider_0": "",
+      "xlconstant_0": "",
+      "Compteur_8bits_0": "",
+      "Comparateur_0": "",
+      "xlconcat_0": "",
+      "xlconstant_1": "",
+      "SPI_Master_0": ""
+    },
+    "ports": {
+      "reset_rtl": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "sys_clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "SPI_sys_clock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000"
+          }
+        }
+      },
+      "Data_In": {
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "PortWidth": {
+            "value": "16",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "sclk": {
+        "direction": "O",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "SPI_SPI_Master_0_0_spi_clk",
+            "value_src": "default_prop"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default_prop"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default_prop"
+          }
+        }
+      },
+      "SS": {
+        "direction": "O"
+      },
+      "MOSI": {
+        "direction": "O"
+      },
+      "UPDOWN": {
+        "direction": "I"
+      },
+      "StartOut": {
+        "direction": "O"
+      },
+      "StartIn": {
+        "direction": "I"
+      }
+    },
+    "components": {
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "SPI_clk_wiz_0_0",
+        "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "290.478"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "133.882"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "10"
+          },
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "15.625"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "78.125"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "2"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "N_Divider_0": {
+        "vlnv": "xilinx.com:user:N_Divider:1.0",
+        "xci_name": "SPI_N_Divider_0_0",
+        "parameters": {
+          "N": {
+            "value": "10"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "SPI_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "25"
+          },
+          "CONST_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "Compteur_8bits_0": {
+        "vlnv": "xilinx.com:user:Compteur_8bits:1.1",
+        "xci_name": "SPI_Compteur_8bits_0_0",
+        "parameters": {
+          "N": {
+            "value": "16"
+          }
+        }
+      },
+      "Comparateur_0": {
+        "vlnv": "xilinx.com:user:Comparateur:1.0",
+        "xci_name": "SPI_Comparateur_0_0",
+        "parameters": {
+          "n": {
+            "value": "16"
+          }
+        }
+      },
+      "xlconcat_0": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "SPI_xlconcat_0_0",
+        "parameters": {
+          "IN0_WIDTH": {
+            "value": "8"
+          },
+          "IN1_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "xlconstant_1": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "SPI_xlconstant_1_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "1"
+          },
+          "CONST_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "SPI_Master_0": {
+        "vlnv": "xilinx.com:user:SPI_Master:1.0",
+        "xci_name": "SPI_SPI_Master_0_0",
+        "parameters": {
+          "n": {
+            "value": "16"
+          }
+        }
+      }
+    },
+    "nets": {
+      "reset_rtl_1": {
+        "ports": [
+          "reset_rtl",
+          "clk_wiz_0/reset",
+          "N_Divider_0/rst",
+          "Compteur_8bits_0/RST"
+        ]
+      },
+      "sys_clock_1": {
+        "ports": [
+          "sys_clock",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "SPI_Master_0_spi_clk": {
+        "ports": [
+          "SPI_Master_0/spi_clk",
+          "sclk"
+        ]
+      },
+      "SPI_Master_0_spi_ss": {
+        "ports": [
+          "SPI_Master_0/spi_ss",
+          "SS"
+        ]
+      },
+      "SPI_Master_0_MOSI": {
+        "ports": [
+          "SPI_Master_0/MOSI",
+          "MOSI"
+        ]
+      },
+      "Compteur_8bits_0_S": {
+        "ports": [
+          "Compteur_8bits_0/S",
+          "Comparateur_0/A"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "Comparateur_0/B"
+        ]
+      },
+      "UPDOWN_1": {
+        "ports": [
+          "UPDOWN",
+          "Compteur_8bits_0/DOWNUP"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "N_Divider_0/clk"
+        ]
+      },
+      "Comparateur_0_S": {
+        "ports": [
+          "Comparateur_0/S",
+          "StartOut"
+        ]
+      },
+      "StartIn_1": {
+        "ports": [
+          "StartIn",
+          "SPI_Master_0/rst"
+        ]
+      },
+      "N_Divider_0_Clk_Div": {
+        "ports": [
+          "N_Divider_0/Clk_Div",
+          "Compteur_8bits_0/H",
+          "SPI_Master_0/clk"
+        ]
+      },
+      "xlconstant_1_dout": {
+        "ports": [
+          "xlconstant_1/dout",
+          "xlconcat_0/In1"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "xlconcat_0/dout",
+          "SPI_Master_0/Data_In"
+        ]
+      },
+      "Data_In_1": {
+        "ports": [
+          "Data_In",
+          "xlconcat_0/In0"
+        ]
+      }
+    }
+  }
+}

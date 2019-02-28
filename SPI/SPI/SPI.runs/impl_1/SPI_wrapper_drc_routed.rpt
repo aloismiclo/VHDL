@@ -1,0 +1,54 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 21 16:55:07 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : report_drc -file SPI_wrapper_drc_routed.rpt -pb SPI_wrapper_drc_routed.pb -rpx SPI_wrapper_drc_routed.rpx
+| Design       : SPI_wrapper
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 3
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| PDRC-153    | Warning  | Gated clock check                                           | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
+| ZPS7-1      | Warning  | PS7 block required                                          | 1          |
++-------------+----------+-------------------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PDRC-153#1 Warning
+Gated clock check  
+Net SPI_i/N_Divider_0/U0/Clk_Div is a gated clock net sourced by a combinational pin SPI_i/N_Divider_0/U0/U0//O, cell SPI_i/N_Divider_0/U0/U0/. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT SPI_i/N_Divider_0/U0/U0/ is driving clock pin of 27 cells. This could lead to large hold time violations. Involved cells are:
+SPI_i/Compteur_8bits_0/U0/tmp_reg[0], SPI_i/Compteur_8bits_0/U0/tmp_reg[10], SPI_i/Compteur_8bits_0/U0/tmp_reg[11], SPI_i/Compteur_8bits_0/U0/tmp_reg[12], SPI_i/Compteur_8bits_0/U0/tmp_reg[13], SPI_i/Compteur_8bits_0/U0/tmp_reg[14], SPI_i/Compteur_8bits_0/U0/tmp_reg[15], SPI_i/Compteur_8bits_0/U0/tmp_reg[1], SPI_i/Compteur_8bits_0/U0/tmp_reg[2], SPI_i/Compteur_8bits_0/U0/tmp_reg[3], SPI_i/Compteur_8bits_0/U0/tmp_reg[4], SPI_i/Compteur_8bits_0/U0/tmp_reg[5], SPI_i/Compteur_8bits_0/U0/tmp_reg[6], SPI_i/Compteur_8bits_0/U0/tmp_reg[7], SPI_i/Compteur_8bits_0/U0/tmp_reg[8] (the first 15 of 27 listed)
+Related violations: <none>
+
+ZPS7-1#1 Warning
+PS7 block required  
+The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+Related violations: <none>
+
+

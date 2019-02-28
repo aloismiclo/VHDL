@@ -1,0 +1,376 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 21 16:53:23 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_SPI_Master_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of SPI_SPI_Master_0_0 (xilinx.com:user:SPI_Master:1.0 (Rev. 3)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 21 16:38:29 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_SPI_Master_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of SPI_SPI_Master_0_0 (xilinx.com:user:SPI_Master:1.0 (Rev. 3)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 21 15:21:53 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_SPI_Master_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of SPI_SPI_Master_0_0 (xilinx.com:user:SPI_Master:1.0 (Rev. 3)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 17:05:44 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Comparateur_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Comparateur_0_0 (xilinx.com:user:Comparateur:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:28:06 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Comparateur_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Comparateur_0_0 (xilinx.com:user:Comparateur:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:19:59 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur_8bits:1.1) from (Rev. 1) to (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:18:10 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 from xilinx.com:user:Compteur:1.0 (Rev. 5) to xilinx.com:user:Compteur_8bits:1.1 (Rev. 1)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:15:17 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:13:20 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:11:35 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:09:27 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+Parameter 'N' is no longer present on the upgraded IP 'SPI_Compteur_8bits_0_0', and cannot be set to '8'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:user:Compteur:1.0 -user_name SPI_Compteur_8bits_0_0
+set_property -dict "\
+  CONFIG.Component_Name {SPI_Compteur_8bits_0_0} \
+  CONFIG.RST.INSERT_VIP {0} \
+  CONFIG.RST.POLARITY {ACTIVE_HIGH} " [get_ips SPI_Compteur_8bits_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 14:06:59 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 from xilinx.com:user:Compteur_8bits:1.0 (Rev. 10) to xilinx.com:user:Compteur:1.0 (Rev. 1)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 13:57:25 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur_8bits:1.0) from (Rev. 8) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 13:55:33 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur_8bits:1.0) from (Rev. 5) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 13:50:15 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_SPI_Master_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_SPI_Master_0_0 (xilinx.com:user:SPI_Master:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 13:48:12 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur_8bits:1.0) from (Rev. 3) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Feb 14 13:44:11 2019
+| Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'SPI_Compteur_8bits_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of SPI_Compteur_8bits_0_0 (xilinx.com:user:Compteur_8bits:1.0) from (Rev. 2) to (Rev. 3)
+
