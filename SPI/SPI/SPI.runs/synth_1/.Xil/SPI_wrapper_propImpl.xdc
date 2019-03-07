@@ -55,11 +55,27 @@ set_property src_info {type:XDC file:3 line:25 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN AB10 [get_ports {StartIn}];  # "JA8"
 set_property src_info {type:XDC file:3 line:26 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN AB9  [get_ports {StartOut}];  # "JA9"
-set_property src_info {type:XDC file:3 line:44 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:29 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN T22 [get_ports {LED[7]}];  # "LD0"
+set_property src_info {type:XDC file:3 line:30 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN T21 [get_ports {LED[6]}];  # "LD1"
+set_property src_info {type:XDC file:3 line:31 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U22 [get_ports {LED[5]}];  # "LD2"
+set_property src_info {type:XDC file:3 line:32 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U21 [get_ports {LED[4]}];  # "LD3"
+set_property src_info {type:XDC file:3 line:33 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN V22 [get_ports {LED[3]}];  # "LD4"
+set_property src_info {type:XDC file:3 line:34 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN W22 [get_ports {LED[2]}];  # "LD5"
+set_property src_info {type:XDC file:3 line:35 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U19 [get_ports {LED[1]}];  # "LD6"
+set_property src_info {type:XDC file:3 line:36 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN U14 [get_ports {LED[0]}];  # "LD7"
+set_property src_info {type:XDC file:3 line:55 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 33]];
-set_property src_info {type:XDC file:3 line:49 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:60 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 34]];
-set_property src_info {type:XDC file:3 line:54 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:65 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 35]];
-set_property src_info {type:XDC file:3 line:57 export:INPUT save:INPUT read:READ} [current_design]
+set_property src_info {type:XDC file:3 line:68 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 13]];

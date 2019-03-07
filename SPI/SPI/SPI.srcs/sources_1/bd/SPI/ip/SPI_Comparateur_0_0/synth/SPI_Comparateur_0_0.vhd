@@ -55,8 +55,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY SPI_Comparateur_0_0 IS
   PORT (
-    A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    A : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    B : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     S : OUT STD_LOGIC
   );
 END SPI_Comparateur_0_0;
@@ -69,8 +69,8 @@ ARCHITECTURE SPI_Comparateur_0_0_arch OF SPI_Comparateur_0_0 IS
       n : INTEGER
     );
     PORT (
-      A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-      B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      A : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      B : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       S : OUT STD_LOGIC
     );
   END COMPONENT Comparateur;
@@ -79,13 +79,13 @@ ARCHITECTURE SPI_Comparateur_0_0_arch OF SPI_Comparateur_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF SPI_Comparateur_0_0_arch : ARCHITECTURE IS "SPI_Comparateur_0_0,Comparateur,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF SPI_Comparateur_0_0_arch: ARCHITECTURE IS "SPI_Comparateur_0_0,Comparateur,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Comparateur,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,n=16}";
+  ATTRIBUTE CORE_GENERATION_INFO OF SPI_Comparateur_0_0_arch: ARCHITECTURE IS "SPI_Comparateur_0_0,Comparateur,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Comparateur,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,n=8}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF SPI_Comparateur_0_0_arch: ARCHITECTURE IS "package_project";
 BEGIN
   U0 : Comparateur
     GENERIC MAP (
-      n => 16
+      n => 8
     )
     PORT MAP (
       A => A,

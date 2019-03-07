@@ -1,0 +1,64 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sat Jan 19 10:06:38 2019
+# Process ID: 8684
+# Current directory: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10092 C:\Users\alois\OneDrive\Documents\Perso\M2_SE\VHDL\TP_05\TP_05.xpr
+# Log file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/vivado.log
+# Journal file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'design_1.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+design_1_xlconstant_0_0
+
+open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:12 . Memory (MB): peak = 845.180 ; gain = 210.371
+update_compile_order -fileset sources_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+[Sat Jan 19 10:08:17 2019] Launched impl_1...
+Run output will be captured here: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249A8500B
+open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1889.852 ; gain = 928.242
+set_property PROGRAM.FILE {C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1435] Device xc7z020 (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249A8500B
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at localhost.
+ Targets(s) ", jsn-JTAG-HS2-210249A8500B" may be locked by another hw_server.
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Jan 19 10:14:31 2019...

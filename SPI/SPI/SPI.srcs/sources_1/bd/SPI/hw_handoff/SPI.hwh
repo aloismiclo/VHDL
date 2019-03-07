@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb 21 16:53:26 2019" VIVADOVERSION="2018.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Feb 28 17:15:45 2019" VIVADOVERSION="2018.3">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="SPI" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -18,7 +18,7 @@
     </PORT>
     <PORT DIR="I" LEFT="7" NAME="Data_In" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_Data_In">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="xlconcat_0" PORT="In0"/>
+        <CONNECTION INSTANCE="SPI_Master_0" PORT="Data_In"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" NAME="sclk" SIGIS="undef" SIGNAME="SPI_Master_0_spi_clk">
@@ -49,6 +49,12 @@
     <PORT DIR="I" NAME="StartIn" SIGIS="undef" SIGNAME="External_Ports_StartIn">
       <CONNECTIONS>
         <CONNECTION INSTANCE="SPI_Master_0" PORT="rst"/>
+        <CONNECTION INSTANCE="SPI_Slave_0" PORT="SPI_RST"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="LED" RIGHT="0" SIGIS="undef" SIGNAME="SPI_Slave_0_DATA">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="SPI_Slave_0" PORT="DATA"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -59,17 +65,17 @@
     <MODULE COREREVISION="4" FULLNAME="/Comparateur_0" HWVERSION="1.0" INSTANCE="Comparateur_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Comparateur" VLNV="xilinx.com:user:Comparateur:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="n" VALUE="16"/>
+        <PARAMETER NAME="n" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="SPI_Comparateur_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="15" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_8bits_0_S">
+        <PORT DIR="I" LEFT="7" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_8bits_0_S">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Compteur_8bits_0" PORT="S"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+        <PORT DIR="I" LEFT="7" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
           </CONNECTIONS>
@@ -85,7 +91,7 @@
     <MODULE COREREVISION="2" FULLNAME="/Compteur_8bits_0" HWVERSION="1.1" INSTANCE="Compteur_8bits_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Compteur_8bits" VLNV="xilinx.com:user:Compteur_8bits:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="N" VALUE="16"/>
+        <PARAMETER NAME="N" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="SPI_Compteur_8bits_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -105,7 +111,7 @@
             <CONNECTION INSTANCE="External_Ports" PORT="UPDOWN"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="15" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_8bits_0_S">
+        <PORT DIR="O" LEFT="7" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_8bits_0_S">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Comparateur_0" PORT="A"/>
           </CONNECTIONS>
@@ -140,10 +146,10 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/SPI_Master_0" HWVERSION="1.0" INSTANCE="SPI_Master_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SPI_Master" VLNV="xilinx.com:user:SPI_Master:1.0">
+    <MODULE COREREVISION="7" FULLNAME="/SPI_Master_0" HWVERSION="1.0" INSTANCE="SPI_Master_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SPI_Master" VLNV="xilinx.com:user:SPI_Master:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="n" VALUE="16"/>
+        <PARAMETER NAME="n" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="SPI_SPI_Master_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -158,24 +164,63 @@
             <CONNECTION INSTANCE="External_Ports" PORT="StartIn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="Data_In" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
+        <PORT DIR="I" LEFT="7" NAME="Data_In" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_Data_In">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="dout"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="Data_In"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="spi_clk" SIGIS="clk" SIGNAME="SPI_Master_0_spi_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="sclk"/>
+            <CONNECTION INSTANCE="SPI_Slave_0" PORT="SPI_CLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="spi_ss" SIGIS="undef" SIGNAME="SPI_Master_0_spi_ss">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="SS"/>
+            <CONNECTION INSTANCE="SPI_Slave_0" PORT="SPI_CS"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="MOSI" SIGIS="undef" SIGNAME="SPI_Master_0_MOSI">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="MOSI"/>
+            <CONNECTION INSTANCE="SPI_Slave_0" PORT="SPI_MOSI"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="2" FULLNAME="/SPI_Slave_0" HWVERSION="1.0" INSTANCE="SPI_Slave_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SPI_Slave" VLNV="xilinx.com:user:SPI_Slave:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="n" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="SPI_SPI_Slave_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="SPI_CLK" SIGIS="clk" SIGNAME="SPI_Master_0_spi_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_Master_0" PORT="spi_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="SPI_MOSI" SIGIS="undef" SIGNAME="SPI_Master_0_MOSI">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_Master_0" PORT="MOSI"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="SPI_CS" SIGIS="undef" SIGNAME="SPI_Master_0_spi_ss">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SPI_Master_0" PORT="spi_ss"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="SPI_RST" SIGIS="rst" SIGNAME="External_Ports_StartIn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="StartIn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="DATA" RIGHT="0" SIGIS="undef" SIGNAME="SPI_Slave_0_DATA">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LED"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -770,94 +815,18 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/xlconcat_0" HWVERSION="2.1" INSTANCE="xlconcat_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="IN0_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="IN1_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="IN2_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN3_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN4_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN5_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN6_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN7_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN8_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN9_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN10_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN11_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN12_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN13_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN14_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN15_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN16_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN17_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN18_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN19_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN20_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN21_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN22_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN23_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN24_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN25_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN26_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN27_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN28_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN29_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN30_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="dout_width" VALUE="16"/>
-        <PARAMETER NAME="NUM_PORTS" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="SPI_xlconcat_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="In0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_Data_In">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Data_In"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="In1" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_1" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconcat_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="SPI_Master_0" PORT="Data_In"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="5" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x0019"/>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x19"/>
         <PARAMETER NAME="Component_Name" VALUE="SPI_xlconstant_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="Comparateur_0" PORT="B"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x01"/>
-        <PARAMETER NAME="Component_Name" VALUE="SPI_xlconstant_1_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" LEFT="7" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_1_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconcat_0" PORT="In1"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

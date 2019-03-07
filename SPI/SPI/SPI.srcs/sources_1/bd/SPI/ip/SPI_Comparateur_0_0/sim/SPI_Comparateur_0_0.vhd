@@ -55,8 +55,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY SPI_Comparateur_0_0 IS
   PORT (
-    A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    A : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+    B : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     S : OUT STD_LOGIC
   );
 END SPI_Comparateur_0_0;
@@ -69,8 +69,8 @@ ARCHITECTURE SPI_Comparateur_0_0_arch OF SPI_Comparateur_0_0 IS
       n : INTEGER
     );
     PORT (
-      A : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-      B : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      A : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+      B : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       S : OUT STD_LOGIC
     );
   END COMPONENT Comparateur;
@@ -79,7 +79,7 @@ ARCHITECTURE SPI_Comparateur_0_0_arch OF SPI_Comparateur_0_0 IS
 BEGIN
   U0 : Comparateur
     GENERIC MAP (
-      n => 16
+      n => 8
     )
     PORT MAP (
       A => A,

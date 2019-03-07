@@ -58,7 +58,7 @@ ENTITY SPI_Compteur_8bits_0_0 IS
     H : IN STD_LOGIC;
     RST : IN STD_LOGIC;
     DOWNUP : IN STD_LOGIC;
-    S : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    S : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
   );
 END SPI_Compteur_8bits_0_0;
 
@@ -73,7 +73,7 @@ ARCHITECTURE SPI_Compteur_8bits_0_0_arch OF SPI_Compteur_8bits_0_0 IS
       H : IN STD_LOGIC;
       RST : IN STD_LOGIC;
       DOWNUP : IN STD_LOGIC;
-      S : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+      S : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
   END COMPONENT Compteur_8bits;
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
@@ -85,7 +85,7 @@ ARCHITECTURE SPI_Compteur_8bits_0_0_arch OF SPI_Compteur_8bits_0_0 IS
 BEGIN
   U0 : Compteur_8bits
     GENERIC MAP (
-      N => 16
+      N => 8
     )
     PORT MAP (
       H => H,

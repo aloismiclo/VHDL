@@ -158,20 +158,46 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set Clk_Div [ create_bd_port -dir O Clk_Div ]
+  set LEDS [ create_bd_port -dir O -from 7 -to 0 LEDS ]
+  set PREP [ create_bd_port -dir I PREP ]
+  set UPDOWN [ create_bd_port -dir I UPDOWN ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {100000000} \
  ] $clk
+  set clk_div [ create_bd_port -dir O clk_div ]
+  set clk_div_in [ create_bd_port -dir I clk_div_in ]
   set rst [ create_bd_port -dir I -type rst rst ]
+
+  # Create instance: Bascule_0, and set properties
+  set Bascule_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Bascule:1.0 Bascule_0 ]
+
+  # Create instance: Dec3v8_0, and set properties
+  set Dec3v8_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Dec3v8:1.0 Dec3v8_0 ]
 
   # Create instance: N_Divider_0, and set properties
   set N_Divider_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:N_Divider:1.0 N_Divider_0 ]
+  set_property -dict [ list \
+   CONFIG.N {90000000} \
+ ] $N_Divider_0
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {5} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
 
   # Create port connections
-  connect_bd_net -net N_Divider_0_Clk_Div [get_bd_ports Clk_Div] [get_bd_pins N_Divider_0/Clk_Div]
+  connect_bd_net -net Bascule_0_S [get_bd_pins Bascule_0/S] [get_bd_pins Dec3v8_0/E]
+  connect_bd_net -net Dec3v8_0_S [get_bd_ports LEDS] [get_bd_pins Dec3v8_0/S]
+  connect_bd_net -net N_Divider_0_Clk_Div [get_bd_ports clk_div] [get_bd_pins N_Divider_0/Clk_Div]
+  connect_bd_net -net PREP_1 [get_bd_ports PREP] [get_bd_pins Bascule_0/PREP]
+  connect_bd_net -net UPDOWN_1 [get_bd_ports UPDOWN] [get_bd_pins Bascule_0/UPDOWN]
   connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins N_Divider_0/clk]
-  connect_bd_net -net rst_1 [get_bd_ports rst] [get_bd_pins N_Divider_0/rst]
+  connect_bd_net -net clk_div_in_1 [get_bd_ports clk_div_in] [get_bd_pins Bascule_0/H]
+  connect_bd_net -net rst_1 [get_bd_ports rst] [get_bd_pins Bascule_0/RST] [get_bd_pins N_Divider_0/rst]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Bascule_0/E] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments
 

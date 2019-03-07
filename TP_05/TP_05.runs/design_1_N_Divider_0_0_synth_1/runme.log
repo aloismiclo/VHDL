@@ -14,33 +14,33 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6936 
+INFO: Helper process launched with PID 15032 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 450.129 ; gain = 91.656
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 449.684 ; gain = 90.945
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_N_Divider_0_0' [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ip/design_1_N_Divider_0_0/synth/design_1_N_Divider_0_0.vhd:64]
-	Parameter N bound to: 7 - type: integer 
-INFO: [Synth 8-3491] module 'N_Divider' declared at 'c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ipshared/0006/src/N_Divider.vhd:34' bound to instance 'U0' of component 'N_Divider' [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ip/design_1_N_Divider_0_0/synth/design_1_N_Divider_0_0.vhd:92]
-INFO: [Synth 8-638] synthesizing module 'N_Divider' [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ipshared/0006/src/N_Divider.vhd:41]
-	Parameter N bound to: 7 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'N_Divider' (1#1) [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ipshared/0006/src/N_Divider.vhd:41]
+	Parameter N bound to: 90000000 - type: integer 
+INFO: [Synth 8-3491] module 'N_Divider' declared at 'c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ipshared/b88f/src/N_Divider.vhd:34' bound to instance 'U0' of component 'N_Divider' [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ip/design_1_N_Divider_0_0/synth/design_1_N_Divider_0_0.vhd:92]
+INFO: [Synth 8-638] synthesizing module 'N_Divider' [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ipshared/b88f/src/N_Divider.vhd:41]
+	Parameter N bound to: 90000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'N_Divider' (1#1) [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ipshared/b88f/src/N_Divider.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'design_1_N_Divider_0_0' (2#1) [c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ip/design_1_N_Divider_0_0/synth/design_1_N_Divider_0_0.vhd:64]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 503.930 ; gain = 145.457
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 503.801 ; gain = 145.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 503.930 ; gain = 145.457
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 503.801 ; gain = 145.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 503.930 ; gain = 145.457
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 503.801 ; gain = 145.063
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 503.930 ; gain = 145.457
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 503.801 ; gain = 145.063
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -53,12 +53,6 @@ No constraint files found.
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 1     
-+---Registers : 
-	                3 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      3 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -66,14 +60,6 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module N_Divider 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      3 Bit       Adders := 1     
-+---Registers : 
-	                3 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      3 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -92,7 +78,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -105,7 +91,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -117,7 +103,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -141,7 +127,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -154,7 +140,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -166,25 +152,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -197,45 +183,51 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |LUT1 |     1|
-|2     |LUT2 |     1|
-|3     |LUT3 |     2|
-|4     |FDCE |     3|
-+------+-----+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    10|
+|2     |LUT1   |     4|
+|3     |LUT2   |    43|
+|4     |LUT3   |     1|
+|5     |LUT4   |     1|
+|6     |LUT5   |     1|
+|7     |LUT6   |     4|
+|8     |FDCE   |    27|
++------+-------+------+
 
 Report Instance Areas: 
 +------+---------+----------+------+
 |      |Instance |Module    |Cells |
 +------+---------+----------+------+
-|1     |top      |          |     7|
-|2     |  U0     |N_Divider |     7|
+|1     |top      |          |    91|
+|2     |  U0     |N_Divider |    91|
 +------+---------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
-Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 662.648 ; gain = 304.176
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 669.184 ; gain = 310.445
 INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+14 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 777.480 ; gain = 430.480
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 772.582 ; gain = 425.316
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.runs/design_1_N_Divider_0_0_synth_1/design_1_N_Divider_0_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 1229.879 ; gain = 452.398
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1249.660 ; gain = 477.078
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/ip/design_1_N_Divider_0_0/design_1_N_Divider_0_0.xci
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/alois/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.runs/design_1_N_Divider_0_0_synth_1/design_1_N_Divider_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_N_Divider_0_0_utilization_synth.rpt -pb design_1_N_Divider_0_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 1233.891 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  6 15:07:02 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1253.664 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  6 18:07:14 2018...

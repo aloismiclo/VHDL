@@ -159,6 +159,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set Data_In [ create_bd_port -dir I -from 7 -to 0 Data_In ]
+  set LED [ create_bd_port -dir O -from 7 -to 0 LED ]
   set MOSI [ create_bd_port -dir O MOSI ]
   set SS [ create_bd_port -dir O SS ]
   set StartIn [ create_bd_port -dir I StartIn ]
@@ -178,13 +179,13 @@ proc create_root_design { parentCell } {
   # Create instance: Comparateur_0, and set properties
   set Comparateur_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Comparateur:1.0 Comparateur_0 ]
   set_property -dict [ list \
-   CONFIG.n {16} \
+   CONFIG.n {8} \
  ] $Comparateur_0
 
   # Create instance: Compteur_8bits_0, and set properties
   set Compteur_8bits_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:Compteur_8bits:1.1 Compteur_8bits_0 ]
   set_property -dict [ list \
-   CONFIG.N {16} \
+   CONFIG.N {8} \
  ] $Compteur_8bits_0
 
   # Create instance: N_Divider_0, and set properties
@@ -196,8 +197,11 @@ proc create_root_design { parentCell } {
   # Create instance: SPI_Master_0, and set properties
   set SPI_Master_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:SPI_Master:1.0 SPI_Master_0 ]
   set_property -dict [ list \
-   CONFIG.n {16} \
+   CONFIG.n {8} \
  ] $SPI_Master_0
+
+  # Create instance: SPI_Slave_0, and set properties
+  set SPI_Slave_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:SPI_Slave:1.0 SPI_Slave_0 ]
 
   # Create instance: clk_wiz_0, and set properties
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
@@ -212,43 +216,28 @@ proc create_root_design { parentCell } {
    CONFIG.USE_BOARD_FLOW {true} \
  ] $clk_wiz_0
 
-  # Create instance: xlconcat_0, and set properties
-  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
-  set_property -dict [ list \
-   CONFIG.IN0_WIDTH {8} \
-   CONFIG.IN1_WIDTH {8} \
- ] $xlconcat_0
-
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
    CONFIG.CONST_VAL {25} \
-   CONFIG.CONST_WIDTH {16} \
- ] $xlconstant_0
-
-  # Create instance: xlconstant_1, and set properties
-  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
-  set_property -dict [ list \
-   CONFIG.CONST_VAL {1} \
    CONFIG.CONST_WIDTH {8} \
- ] $xlconstant_1
+ ] $xlconstant_0
 
   # Create port connections
   connect_bd_net -net Comparateur_0_S [get_bd_ports StartOut] [get_bd_pins Comparateur_0/S]
   connect_bd_net -net Compteur_8bits_0_S [get_bd_pins Comparateur_0/A] [get_bd_pins Compteur_8bits_0/S]
-  connect_bd_net -net Data_In_1 [get_bd_ports Data_In] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net Data_In_1 [get_bd_ports Data_In] [get_bd_pins SPI_Master_0/Data_In]
   connect_bd_net -net N_Divider_0_Clk_Div [get_bd_pins Compteur_8bits_0/H] [get_bd_pins N_Divider_0/Clk_Div] [get_bd_pins SPI_Master_0/clk]
-  connect_bd_net -net SPI_Master_0_MOSI [get_bd_ports MOSI] [get_bd_pins SPI_Master_0/MOSI]
-  connect_bd_net -net SPI_Master_0_spi_clk [get_bd_ports sclk] [get_bd_pins SPI_Master_0/spi_clk]
-  connect_bd_net -net SPI_Master_0_spi_ss [get_bd_ports SS] [get_bd_pins SPI_Master_0/spi_ss]
-  connect_bd_net -net StartIn_1 [get_bd_ports StartIn] [get_bd_pins SPI_Master_0/rst]
+  connect_bd_net -net SPI_Master_0_MOSI [get_bd_ports MOSI] [get_bd_pins SPI_Master_0/MOSI] [get_bd_pins SPI_Slave_0/SPI_MOSI]
+  connect_bd_net -net SPI_Master_0_spi_clk [get_bd_ports sclk] [get_bd_pins SPI_Master_0/spi_clk] [get_bd_pins SPI_Slave_0/SPI_CLK]
+  connect_bd_net -net SPI_Master_0_spi_ss [get_bd_ports SS] [get_bd_pins SPI_Master_0/spi_ss] [get_bd_pins SPI_Slave_0/SPI_CS]
+  connect_bd_net -net SPI_Slave_0_DATA [get_bd_ports LED] [get_bd_pins SPI_Slave_0/DATA]
+  connect_bd_net -net StartIn_1 [get_bd_ports StartIn] [get_bd_pins SPI_Master_0/rst] [get_bd_pins SPI_Slave_0/SPI_RST]
   connect_bd_net -net UPDOWN_1 [get_bd_ports UPDOWN] [get_bd_pins Compteur_8bits_0/DOWNUP]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins N_Divider_0/clk] [get_bd_pins clk_wiz_0/clk_out1]
   connect_bd_net -net reset_rtl_1 [get_bd_ports reset_rtl] [get_bd_pins Compteur_8bits_0/RST] [get_bd_pins N_Divider_0/rst] [get_bd_pins clk_wiz_0/reset]
   connect_bd_net -net sys_clock_1 [get_bd_ports sys_clock] [get_bd_pins clk_wiz_0/clk_in1]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins SPI_Master_0/Data_In] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins Comparateur_0/B] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_pins xlconcat_0/In1] [get_bd_pins xlconstant_1/dout]
 
   # Create address segments
 

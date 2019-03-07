@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:N_Divider:1.0
--- IP Revision: 3
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -79,7 +79,7 @@ ARCHITECTURE design_1_N_Divider_0_0_arch OF design_1_N_Divider_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF design_1_N_Divider_0_0_arch : ARCHITECTURE IS "design_1_N_Divider_0_0,N_Divider,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF design_1_N_Divider_0_0_arch: ARCHITECTURE IS "design_1_N_Divider_0_0,N_Divider,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=N_Divider,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,N=7}";
+  ATTRIBUTE CORE_GENERATION_INFO OF design_1_N_Divider_0_0_arch: ARCHITECTURE IS "design_1_N_Divider_0_0,N_Divider,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=N_Divider,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,N=90000000}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF design_1_N_Divider_0_0_arch: ARCHITECTURE IS "package_project";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -91,7 +91,7 @@ ARCHITECTURE design_1_N_Divider_0_0_arch OF design_1_N_Divider_0_0 IS
 BEGIN
   U0 : N_Divider
     GENERIC MAP (
-      N => 7
+      N => 90000000
     )
     PORT MAP (
       rst => rst,

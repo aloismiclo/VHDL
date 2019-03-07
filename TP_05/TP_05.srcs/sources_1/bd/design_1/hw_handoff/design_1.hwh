@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec  6 15:06:09 2018" VIVADOVERSION="2018.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec  6 18:06:22 2018" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -7,6 +7,7 @@
     <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="External_Ports_rst">
       <CONNECTIONS>
         <CONNECTION INSTANCE="N_Divider_0" PORT="rst"/>
+        <CONNECTION INSTANCE="Bascule_0" PORT="RST"/>
       </CONNECTIONS>
     </PORT>
     <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
@@ -14,9 +15,29 @@
         <CONNECTION INSTANCE="N_Divider_0" PORT="clk"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="Clk_Div" SIGIS="undef" SIGNAME="N_Divider_0_Clk_Div">
+    <PORT DIR="O" LEFT="7" NAME="LEDS" RIGHT="0" SIGIS="undef" SIGNAME="Dec3v8_0_S">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Dec3v8_0" PORT="S"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="PREP" SIGIS="undef" SIGNAME="External_Ports_PREP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Bascule_0" PORT="PREP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="clk_div" SIGIS="undef" SIGNAME="N_Divider_0_Clk_Div">
       <CONNECTIONS>
         <CONNECTION INSTANCE="N_Divider_0" PORT="Clk_Div"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="clk_div_in" SIGIS="undef" SIGNAME="External_Ports_clk_div_in">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Bascule_0" PORT="H"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="UPDOWN" SIGIS="undef" SIGNAME="External_Ports_UPDOWN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Bascule_0" PORT="UPDOWN"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -24,10 +45,70 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
+    <MODULE FULLNAME="/Bascule_0" HWVERSION="1.0" INSTANCE="Bascule_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Bascule" VLNV="xilinx.com:user:Bascule:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Bascule_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="H" SIGIS="undef" SIGNAME="External_Ports_clk_div_in">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_div_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RST" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="PREP" SIGIS="undef" SIGNAME="External_Ports_PREP">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PREP"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="UPDOWN" SIGIS="undef" SIGNAME="External_Ports_UPDOWN">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="UPDOWN"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="E" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="Bascule_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Dec3v8_0" PORT="E"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/Dec3v8_0" HWVERSION="1.0" INSTANCE="Dec3v8_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Dec3v8" VLNV="xilinx.com:user:Dec3v8:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Dec3v8_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="2" NAME="E" RIGHT="0" SIGIS="undef" SIGNAME="Bascule_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Bascule_0" PORT="S"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="Dec3v8_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="LEDS"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE FULLNAME="/N_Divider_0" HWVERSION="1.0" INSTANCE="N_Divider_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="N_Divider" VLNV="xilinx.com:user:N_Divider:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="N" VALUE="7"/>
+        <PARAMETER NAME="N" VALUE="90000000"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_N_Divider_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -44,7 +125,24 @@
         </PORT>
         <PORT DIR="O" NAME="Clk_Div" SIGIS="undef" SIGNAME="N_Divider_0_Clk_Div">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="Clk_Div"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_div"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CONST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="CONST_VAL" VALUE="0x5"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="3" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Bascule_0" PORT="E"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

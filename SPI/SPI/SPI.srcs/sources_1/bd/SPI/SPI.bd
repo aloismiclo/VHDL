@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xDD47CA2A55196F8C",
+      "boundary_crc": "0x7E2C8EF4A07973F6",
       "device": "xc7z020clg484-1",
       "name": "SPI",
       "synth_flow_mode": "None",
@@ -14,9 +14,8 @@
       "xlconstant_0": "",
       "Compteur_8bits_0": "",
       "Comparateur_0": "",
-      "xlconcat_0": "",
-      "xlconstant_1": "",
-      "SPI_Master_0": ""
+      "SPI_Master_0": "",
+      "SPI_Slave_0": ""
     },
     "ports": {
       "reset_rtl": {
@@ -94,6 +93,11 @@
       },
       "StartIn": {
         "direction": "I"
+      },
+      "LED": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
       }
     },
     "components": {
@@ -144,7 +148,7 @@
             "value": "25"
           },
           "CONST_WIDTH": {
-            "value": "16"
+            "value": "8"
           }
         }
       },
@@ -153,7 +157,7 @@
         "xci_name": "SPI_Compteur_8bits_0_0",
         "parameters": {
           "N": {
-            "value": "16"
+            "value": "8"
           }
         }
       },
@@ -162,30 +166,6 @@
         "xci_name": "SPI_Comparateur_0_0",
         "parameters": {
           "n": {
-            "value": "16"
-          }
-        }
-      },
-      "xlconcat_0": {
-        "vlnv": "xilinx.com:ip:xlconcat:2.1",
-        "xci_name": "SPI_xlconcat_0_0",
-        "parameters": {
-          "IN0_WIDTH": {
-            "value": "8"
-          },
-          "IN1_WIDTH": {
-            "value": "8"
-          }
-        }
-      },
-      "xlconstant_1": {
-        "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "SPI_xlconstant_1_0",
-        "parameters": {
-          "CONST_VAL": {
-            "value": "1"
-          },
-          "CONST_WIDTH": {
             "value": "8"
           }
         }
@@ -195,9 +175,13 @@
         "xci_name": "SPI_SPI_Master_0_0",
         "parameters": {
           "n": {
-            "value": "16"
+            "value": "8"
           }
         }
+      },
+      "SPI_Slave_0": {
+        "vlnv": "xilinx.com:user:SPI_Slave:1.0",
+        "xci_name": "SPI_SPI_Slave_0_0"
       }
     },
     "nets": {
@@ -218,19 +202,22 @@
       "SPI_Master_0_spi_clk": {
         "ports": [
           "SPI_Master_0/spi_clk",
-          "sclk"
+          "sclk",
+          "SPI_Slave_0/SPI_CLK"
         ]
       },
       "SPI_Master_0_spi_ss": {
         "ports": [
           "SPI_Master_0/spi_ss",
-          "SS"
+          "SS",
+          "SPI_Slave_0/SPI_CS"
         ]
       },
       "SPI_Master_0_MOSI": {
         "ports": [
           "SPI_Master_0/MOSI",
-          "MOSI"
+          "MOSI",
+          "SPI_Slave_0/SPI_MOSI"
         ]
       },
       "Compteur_8bits_0_S": {
@@ -266,7 +253,8 @@
       "StartIn_1": {
         "ports": [
           "StartIn",
-          "SPI_Master_0/rst"
+          "SPI_Master_0/rst",
+          "SPI_Slave_0/SPI_RST"
         ]
       },
       "N_Divider_0_Clk_Div": {
@@ -276,22 +264,16 @@
           "SPI_Master_0/clk"
         ]
       },
-      "xlconstant_1_dout": {
+      "SPI_Slave_0_DATA": {
         "ports": [
-          "xlconstant_1/dout",
-          "xlconcat_0/In1"
-        ]
-      },
-      "xlconcat_0_dout": {
-        "ports": [
-          "xlconcat_0/dout",
-          "SPI_Master_0/Data_In"
+          "SPI_Slave_0/DATA",
+          "LED"
         ]
       },
       "Data_In_1": {
         "ports": [
           "Data_In",
-          "xlconcat_0/In0"
+          "SPI_Master_0/Data_In"
         ]
       }
     }

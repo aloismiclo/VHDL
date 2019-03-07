@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="SPI" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1550764406"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1550764406"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1550764406"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1550764406"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1551370545"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1551370545"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1551370545"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1551370545"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\SPI_SPI_Master_0_0\SPI_SPI_Master_0_0.xci" Type="IP">
         <Instance HierarchyPath="SPI_Master_0"/>
@@ -66,16 +66,8 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\SPI_xlconcat_0_0\SPI_xlconcat_0_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconcat_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\SPI_xlconstant_1_0\SPI_xlconstant_1_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconstant_1"/>
+      <File Name="ip\SPI_SPI_Slave_0_0\SPI_SPI_Slave_0_0.xci" Type="IP">
+        <Instance HierarchyPath="SPI_Slave_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

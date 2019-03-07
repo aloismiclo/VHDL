@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:SPI_Master:1.0
--- IP Revision: 3
+-- IP Revision: 7
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -57,7 +57,7 @@ ENTITY SPI_SPI_Master_0_0 IS
   PORT (
     clk : IN STD_LOGIC;
     rst : IN STD_LOGIC;
-    Data_In : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+    Data_In : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
     spi_clk : OUT STD_LOGIC;
     spi_ss : OUT STD_LOGIC;
     MOSI : OUT STD_LOGIC
@@ -74,7 +74,7 @@ ARCHITECTURE SPI_SPI_Master_0_0_arch OF SPI_SPI_Master_0_0 IS
     PORT (
       clk : IN STD_LOGIC;
       rst : IN STD_LOGIC;
-      Data_In : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+      Data_In : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
       spi_clk : OUT STD_LOGIC;
       spi_ss : OUT STD_LOGIC;
       MOSI : OUT STD_LOGIC
@@ -85,7 +85,7 @@ ARCHITECTURE SPI_SPI_Master_0_0_arch OF SPI_SPI_Master_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF SPI_SPI_Master_0_0_arch : ARCHITECTURE IS "SPI_SPI_Master_0_0,SPI_Master,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF SPI_SPI_Master_0_0_arch: ARCHITECTURE IS "SPI_SPI_Master_0_0,SPI_Master,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=SPI_Master,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,n=16}";
+  ATTRIBUTE CORE_GENERATION_INFO OF SPI_SPI_Master_0_0_arch: ARCHITECTURE IS "SPI_SPI_Master_0_0,SPI_Master,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=SPI_Master,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,n=8}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF SPI_SPI_Master_0_0_arch: ARCHITECTURE IS "package_project";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -99,7 +99,7 @@ ARCHITECTURE SPI_SPI_Master_0_0_arch OF SPI_SPI_Master_0_0 IS
 BEGIN
   U0 : SPI_Master
     GENERIC MAP (
-      n => 16
+      n => 8
     )
     PORT MAP (
       clk => clk,

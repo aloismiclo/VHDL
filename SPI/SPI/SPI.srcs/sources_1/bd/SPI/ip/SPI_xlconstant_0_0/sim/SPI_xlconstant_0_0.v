@@ -57,11 +57,11 @@ module SPI_xlconstant_0_0 (
   dout
 );
 
-output wire [15 : 0] dout;
+output wire [7 : 0] dout;
 
   xlconstant_v1_1_5_xlconstant #(
-    .CONST_WIDTH(16),
-    .CONST_VAL('H0019)
+    .CONST_WIDTH(8),
+    .CONST_VAL('H19)
   ) inst (
     .dout(dout)
   );

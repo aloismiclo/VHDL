@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Thu Feb 21 16:53:26 2019
+//Date        : Thu Feb 28 17:15:43 2019
 //Host        : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
 //Command     : generate_target SPI_wrapper.bd
 //Design      : SPI_wrapper
@@ -11,6 +11,7 @@
 
 module SPI_wrapper
    (Data_In,
+    LED,
     MOSI,
     SS,
     StartIn,
@@ -20,6 +21,7 @@ module SPI_wrapper
     sclk,
     sys_clock);
   input [7:0]Data_In;
+  output [7:0]LED;
   output MOSI;
   output SS;
   input StartIn;
@@ -30,6 +32,7 @@ module SPI_wrapper
   input sys_clock;
 
   wire [7:0]Data_In;
+  wire [7:0]LED;
   wire MOSI;
   wire SS;
   wire StartIn;
@@ -41,6 +44,7 @@ module SPI_wrapper
 
   SPI SPI_i
        (.Data_In(Data_In),
+        .LED(LED),
         .MOSI(MOSI),
         .SS(SS),
         .StartIn(StartIn),

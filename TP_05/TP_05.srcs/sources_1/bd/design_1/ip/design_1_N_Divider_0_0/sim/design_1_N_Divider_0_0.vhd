@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:N_Divider:1.0
--- IP Revision: 3
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -85,7 +85,7 @@ ARCHITECTURE design_1_N_Divider_0_0_arch OF design_1_N_Divider_0_0 IS
 BEGIN
   U0 : N_Divider
     GENERIC MAP (
-      N => 7
+      N => 90000000
     )
     PORT MAP (
       rst => rst,

@@ -24,11 +24,8 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SPI_Compteur_8b
 # IP: bd/SPI/ip/SPI_xlconstant_0_0/SPI_xlconstant_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SPI_xlconstant_0_0 || ORIG_REF_NAME==SPI_xlconstant_0_0} -quiet] -quiet
 
-# IP: bd/SPI/ip/SPI_xlconcat_0_0/SPI_xlconcat_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SPI_xlconcat_0_0 || ORIG_REF_NAME==SPI_xlconcat_0_0} -quiet] -quiet
-
-# IP: bd/SPI/ip/SPI_xlconstant_1_0/SPI_xlconstant_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SPI_xlconstant_1_0 || ORIG_REF_NAME==SPI_xlconstant_1_0} -quiet] -quiet
+# IP: bd/SPI/ip/SPI_SPI_Slave_0_0/SPI_SPI_Slave_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==SPI_SPI_Slave_0_0 || ORIG_REF_NAME==SPI_SPI_Slave_0_0} -quiet] -quiet
 
 # XDC: bd/SPI/ip/SPI_SPI_Master_0_0/src/zedboard_master_XDC_RevC_D_v3.xdc
 set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==SPI_SPI_Master_0_0 || ORIG_REF_NAME==SPI_SPI_Master_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet

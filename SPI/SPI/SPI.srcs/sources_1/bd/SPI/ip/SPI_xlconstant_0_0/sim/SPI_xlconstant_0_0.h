@@ -57,8 +57,8 @@
 #include "systemc.h"
 class SPI_xlconstant_0_0 : public sc_module {
   public:
-xlconstant_v1_1_5<16,25> mod;
-  sc_out< sc_bv<16> > dout;
+xlconstant_v1_1_5<8,25> mod;
+  sc_out< sc_bv<8> > dout;
 SPI_xlconstant_0_0 (sc_core::sc_module_name name) :sc_module(name), mod("mod") {
     mod.dout(dout);
   }

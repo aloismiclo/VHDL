@@ -1,0 +1,55 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Feb 28 17:07:42 2019
+# Process ID: 15452
+# Current directory: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10068 C:\Users\alois\OneDrive\Documents\Perso\M2_SE\VHDL\SPi_Slave\SPI_Slave.xpr
+# Log file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/vivado.log
+# Journal file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 755.969 ; gain = 124.617
+update_compile_order -fileset sources_1
+ipx::package_project -root_dir C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave -vendor xilinx.com -library user -taxonomy /UserIP -import_files -set_current false
+INFO: [IP_Flow 19-5107] Inferred bus interface 'SPI_RST' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'SPI_CLK' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'SPI_CLK': Added interface parameter 'ASSOCIATED_RESET' with value 'SPI_RST'.
+WARNING: [IP_Flow 19-3153] Bus Interface 'SPI_CLK': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-2181] Payment Required is not set for this core.
+INFO: [IP_Flow 19-2187] The Product Guide file is missing.
+ipx::unload_core c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 860.555 ; gain = 50.820
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO'.
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:SPI_Slave:1.0'. The one found in IP location 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs' will take precedence over the same IP in location c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 860.555 ; gain = 50.820
+update_compile_order -fileset sources_1
+current_project SPI_Slave
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+current_project tmp_edit_project
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO
+INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO'
+CRITICAL WARNING: [IP_Flow 19-1663] Duplicate IP found for 'xilinx.com:user:SPI_Slave:1.0'. The one found in IP location 'c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs' will take precedence over the same IP in location c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 28 17:09:21 2019...

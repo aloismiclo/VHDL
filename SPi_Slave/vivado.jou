@@ -1,0 +1,28 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Feb 28 17:07:42 2019
+# Process ID: 15452
+# Current directory: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10068 C:\Users\alois\OneDrive\Documents\Perso\M2_SE\VHDL\SPi_Slave\SPI_Slave.xpr
+# Log file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/vivado.log
+# Journal file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.xpr
+update_compile_order -fileset sources_1
+ipx::package_project -root_dir C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave -vendor xilinx.com -library user -taxonomy /UserIP -import_files -set_current false
+ipx::unload_core c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO/SPI_Slave/component.xml
+update_compile_order -fileset sources_1
+current_project SPI_Slave
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+current_project tmp_edit_project
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/IP_REPO

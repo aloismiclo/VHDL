@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Feb 21 16:55:08 2019
+| Date         : Thu Feb 28 17:28:03 2019
 | Host         : DESKTOP-P49MTKL running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file SPI_wrapper_timing_summary_routed.rpt -pb SPI_wrapper_timing_summary_routed.pb -rpx SPI_wrapper_timing_summary_routed.rpx -warn_on_violation
 | Design       : SPI_wrapper
@@ -52,13 +52,15 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 27 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[0]/Q (HIGH)
+ There are 30 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[0]/Q (HIGH)
 
- There are 27 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[1]/Q (HIGH)
+ There are 30 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[1]/Q (HIGH)
 
- There are 27 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[2]/Q (HIGH)
+ There are 30 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[2]/Q (HIGH)
 
- There are 27 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[3]/Q (HIGH)
+ There are 30 register/latch pins with no clock driven by root clock pin: SPI_i/N_Divider_0/U0/count_reg[3]/Q (HIGH)
+
+ There are 11 register/latch pins with no clock driven by root clock pin: SPI_i/SPI_Master_0/U0/spi_ss_tmp1_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -73,7 +75,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 59 pins that are not constrained for maximum delay. (HIGH)
+ There are 69 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -87,7 +89,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 4 ports with no output delay specified. (HIGH)
+ There are 12 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -132,7 +134,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     98.405        0.000                      0                    4        0.309        0.000                      0                    4        3.000        0.000                       0                    10  
+     98.287        0.000                      0                    4        0.254        0.000                      0                    4        3.000        0.000                       0                    10  
 
 
 All user specified timing constraints are met.
@@ -158,7 +160,7 @@ sys_clock                   {0.000 5.000}        10.000          100.000
 Clock                           WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----                           -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 sys_clock                                                                                                                                                                     3.000        0.000                       0                     1  
-  clk_out1_SPI_clk_wiz_0_0       98.405        0.000                      0                    4        0.309        0.000                      0                    4       49.500        0.000                       0                     6  
+  clk_out1_SPI_clk_wiz_0_0       98.287        0.000                      0                    4        0.254        0.000                      0                    4       49.500        0.000                       0                     6  
   clkfbout_SPI_clk_wiz_0_0                                                                                                                                                   17.845        0.000                       0                     3  
 
 
@@ -217,152 +219,28 @@ High Pulse Width  Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000 
 From Clock:  clk_out1_SPI_clk_wiz_0_0
   To Clock:  clk_out1_SPI_clk_wiz_0_0
 
-Setup :            0  Failing Endpoints,  Worst Slack       98.405ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.309ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       98.287ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.254ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack       49.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             98.405ns  (required time - arrival time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            SPI_i/N_Divider_0/U0/count_reg[2]/D
-                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             clk_out1_SPI_clk_wiz_0_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@100.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        1.476ns  (logic 0.580ns (39.286%)  route 0.896ns (60.714%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.396ns = ( 98.604 - 100.000 ) 
-    Source Clock Delay      (SCD):    -0.757ns
-    Clock Pessimism Removal (CPR):    0.639ns
-  Clock Uncertainty:      0.149ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.290ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
-                                                      0.000     0.000 r  
-    Y9                                                0.000     0.000 r  sys_clock (IN)
-                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
-    Y9                   IBUF (Prop_ibuf_I_O)         1.490     1.490 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.285     2.775    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.343    -4.568 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.855    -2.713    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101    -2.612 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.855    -0.757    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.456    -0.301 r  SPI_i/N_Divider_0/U0/count_reg[0]/Q
-                         net (fo=5, routed)           0.896     0.596    SPI_i/N_Divider_0/U0/count_reg__0[0]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I0_O)        0.124     0.720 r  SPI_i/N_Divider_0/U0/count[2]_i_1/O
-                         net (fo=1, routed)           0.000     0.720    SPI_i/N_Divider_0/U0/p_0_in[2]
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
-                                                    100.000   100.000 r  
-    Y9                                                0.000   100.000 r  sys_clock (IN)
-                         net (fo=0)                   0.000   100.000    SPI_i/clk_wiz_0/inst/clk_in1
-    Y9                   IBUF (Prop_ibuf_I_O)         1.420   101.420 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   102.582    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.438    95.144 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.691    96.835    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    96.926 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.678    98.604    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/C
-                         clock pessimism              0.639    99.243    
-                         clock uncertainty           -0.149    99.094    
-    SLICE_X110Y70        FDCE (Setup_fdce_C_D)        0.031    99.125    SPI_i/N_Divider_0/U0/count_reg[2]
-  -------------------------------------------------------------------
-                         required time                         99.125    
-                         arrival time                          -0.720    
-  -------------------------------------------------------------------
-                         slack                                 98.405    
-
-Slack (MET) :             98.421ns  (required time - arrival time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            SPI_i/N_Divider_0/U0/count_reg[3]/D
-                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             clk_out1_SPI_clk_wiz_0_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            100.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@100.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        1.504ns  (logic 0.608ns (40.416%)  route 0.896ns (59.584%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.396ns = ( 98.604 - 100.000 ) 
-    Source Clock Delay      (SCD):    -0.757ns
-    Clock Pessimism Removal (CPR):    0.639ns
-  Clock Uncertainty:      0.149ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.290ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
-                                                      0.000     0.000 r  
-    Y9                                                0.000     0.000 r  sys_clock (IN)
-                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
-    Y9                   IBUF (Prop_ibuf_I_O)         1.490     1.490 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.285     2.775    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.343    -4.568 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.855    -2.713    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101    -2.612 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.855    -0.757    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.456    -0.301 r  SPI_i/N_Divider_0/U0/count_reg[0]/Q
-                         net (fo=5, routed)           0.896     0.596    SPI_i/N_Divider_0/U0/count_reg__0[0]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I0_O)        0.152     0.748 r  SPI_i/N_Divider_0/U0/count[3]_i_1/O
-                         net (fo=1, routed)           0.000     0.748    SPI_i/N_Divider_0/U0/p_0_in[3]
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
-                                                    100.000   100.000 r  
-    Y9                                                0.000   100.000 r  sys_clock (IN)
-                         net (fo=0)                   0.000   100.000    SPI_i/clk_wiz_0/inst/clk_in1
-    Y9                   IBUF (Prop_ibuf_I_O)         1.420   101.420 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   102.582    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.438    95.144 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.691    96.835    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    96.926 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.678    98.604    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/C
-                         clock pessimism              0.639    99.243    
-                         clock uncertainty           -0.149    99.094    
-    SLICE_X110Y70        FDCE (Setup_fdce_C_D)        0.075    99.169    SPI_i/N_Divider_0/U0/count_reg[3]
-  -------------------------------------------------------------------
-                         required time                         99.169    
-                         arrival time                          -0.748    
-  -------------------------------------------------------------------
-                         slack                                 98.421    
-
-Slack (MET) :             98.453ns  (required time - arrival time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[3]/C
+Slack (MET) :             98.287ns  (required time - arrival time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Destination:            SPI_i/N_Divider_0/U0/count_reg[0]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Path Group:             clk_out1_SPI_clk_wiz_0_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            100.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@100.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        1.426ns  (logic 0.715ns (50.126%)  route 0.711ns (49.874%))
+  Data Path Delay:        1.593ns  (logic 0.718ns (45.086%)  route 0.875ns (54.914%))
   Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.396ns = ( 98.604 - 100.000 ) 
-    Source Clock Delay      (SCD):    -0.757ns
-    Clock Pessimism Removal (CPR):    0.639ns
+    Destination Clock Delay (DCD):    -1.384ns = ( 98.616 - 100.000 ) 
+    Source Clock Delay      (SCD):    -0.743ns
+    Clock Pessimism Removal (CPR):    0.641ns
   Clock Uncertainty:      0.149ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.290ns
@@ -380,14 +258,14 @@ Slack (MET) :             98.453ns  (required time - arrival time)
                                                      -7.343    -4.568 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.855    -2.713    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101    -2.612 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.855    -0.757    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/C
+                         net (fo=4, routed)           1.869    -0.743    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.419    -0.338 f  SPI_i/N_Divider_0/U0/count_reg[3]/Q
-                         net (fo=5, routed)           0.711     0.374    SPI_i/N_Divider_0/U0/count_reg__0[3]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I0_O)        0.296     0.670 r  SPI_i/N_Divider_0/U0/count[0]_i_1/O
-                         net (fo=1, routed)           0.000     0.670    SPI_i/N_Divider_0/U0/count[0]_i_1_n_0
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/D
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.419    -0.324 f  SPI_i/N_Divider_0/U0/count_reg[1]/Q
+                         net (fo=5, routed)           0.875     0.551    SPI_i/N_Divider_0/U0/count_reg__0[1]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I2_O)        0.299     0.850 r  SPI_i/N_Divider_0/U0/count[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.850    SPI_i/N_Divider_0/U0/count[0]_i_1_n_0
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
@@ -400,31 +278,31 @@ Slack (MET) :             98.453ns  (required time - arrival time)
                                                      -7.438    95.144 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.691    96.835    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    96.926 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.678    98.604    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
-                         clock pessimism              0.639    99.243    
-                         clock uncertainty           -0.149    99.094    
-    SLICE_X110Y70        FDCE (Setup_fdce_C_D)        0.029    99.123    SPI_i/N_Divider_0/U0/count_reg[0]
+                         net (fo=4, routed)           1.690    98.616    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
+                         clock pessimism              0.641    99.257    
+                         clock uncertainty           -0.149    99.108    
+    SLICE_X111Y50        FDCE (Setup_fdce_C_D)        0.029    99.137    SPI_i/N_Divider_0/U0/count_reg[0]
   -------------------------------------------------------------------
-                         required time                         99.123    
-                         arrival time                          -0.670    
+                         required time                         99.137    
+                         arrival time                          -0.850    
   -------------------------------------------------------------------
-                         slack                                 98.453    
+                         slack                                 98.287    
 
-Slack (MET) :             98.471ns  (required time - arrival time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[3]/C
+Slack (MET) :             98.305ns  (required time - arrival time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[1]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Destination:            SPI_i/N_Divider_0/U0/count_reg[1]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Path Group:             clk_out1_SPI_clk_wiz_0_0
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            100.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@100.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        1.454ns  (logic 0.743ns (51.087%)  route 0.711ns (48.913%))
+  Data Path Delay:        1.621ns  (logic 0.746ns (46.035%)  route 0.875ns (53.965%))
   Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.396ns = ( 98.604 - 100.000 ) 
-    Source Clock Delay      (SCD):    -0.757ns
-    Clock Pessimism Removal (CPR):    0.639ns
+    Destination Clock Delay (DCD):    -1.384ns = ( 98.616 - 100.000 ) 
+    Source Clock Delay      (SCD):    -0.743ns
+    Clock Pessimism Removal (CPR):    0.641ns
   Clock Uncertainty:      0.149ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.290ns
@@ -442,14 +320,14 @@ Slack (MET) :             98.471ns  (required time - arrival time)
                                                      -7.343    -4.568 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.855    -2.713    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101    -2.612 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.855    -0.757    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/C
+                         net (fo=4, routed)           1.869    -0.743    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.419    -0.338 f  SPI_i/N_Divider_0/U0/count_reg[3]/Q
-                         net (fo=5, routed)           0.711     0.374    SPI_i/N_Divider_0/U0/count_reg__0[3]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I1_O)        0.324     0.698 r  SPI_i/N_Divider_0/U0/count[1]_i_1/O
-                         net (fo=1, routed)           0.000     0.698    SPI_i/N_Divider_0/U0/p_0_in[1]
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/D
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.419    -0.324 r  SPI_i/N_Divider_0/U0/count_reg[1]/Q
+                         net (fo=5, routed)           0.875     0.551    SPI_i/N_Divider_0/U0/count_reg__0[1]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I3_O)        0.327     0.878 r  SPI_i/N_Divider_0/U0/count[1]_i_1/O
+                         net (fo=1, routed)           0.000     0.878    SPI_i/N_Divider_0/U0/p_0_in[1]
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
@@ -462,16 +340,140 @@ Slack (MET) :             98.471ns  (required time - arrival time)
                                                      -7.438    95.144 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.691    96.835    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    96.926 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           1.678    98.604    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
-                         clock pessimism              0.639    99.243    
-                         clock uncertainty           -0.149    99.094    
-    SLICE_X110Y70        FDCE (Setup_fdce_C_D)        0.075    99.169    SPI_i/N_Divider_0/U0/count_reg[1]
+                         net (fo=4, routed)           1.690    98.616    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
+                         clock pessimism              0.641    99.257    
+                         clock uncertainty           -0.149    99.108    
+    SLICE_X111Y50        FDCE (Setup_fdce_C_D)        0.075    99.183    SPI_i/N_Divider_0/U0/count_reg[1]
   -------------------------------------------------------------------
-                         required time                         99.169    
-                         arrival time                          -0.698    
+                         required time                         99.183    
+                         arrival time                          -0.878    
   -------------------------------------------------------------------
-                         slack                                 98.471    
+                         slack                                 98.305    
+
+Slack (MET) :             98.427ns  (required time - arrival time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            SPI_i/N_Divider_0/U0/count_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             clk_out1_SPI_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@100.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        1.454ns  (logic 0.580ns (39.883%)  route 0.874ns (60.117%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.384ns = ( 98.616 - 100.000 ) 
+    Source Clock Delay      (SCD):    -0.743ns
+    Clock Pessimism Removal (CPR):    0.641ns
+  Clock Uncertainty:      0.149ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.290ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  sys_clock (IN)
+                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
+    Y9                   IBUF (Prop_ibuf_I_O)         1.490     1.490 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.285     2.775    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.343    -4.568 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.855    -2.713    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101    -2.612 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=4, routed)           1.869    -0.743    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.456    -0.287 r  SPI_i/N_Divider_0/U0/count_reg[2]/Q
+                         net (fo=5, routed)           0.874     0.588    SPI_i/N_Divider_0/U0/count_reg__0[2]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I2_O)        0.124     0.712 r  SPI_i/N_Divider_0/U0/count[2]_i_1/O
+                         net (fo=1, routed)           0.000     0.712    SPI_i/N_Divider_0/U0/p_0_in[2]
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
+                                                    100.000   100.000 r  
+    Y9                                                0.000   100.000 r  sys_clock (IN)
+                         net (fo=0)                   0.000   100.000    SPI_i/clk_wiz_0/inst/clk_in1
+    Y9                   IBUF (Prop_ibuf_I_O)         1.420   101.420 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162   102.582    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.438    95.144 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.691    96.835    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    96.926 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=4, routed)           1.690    98.616    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/C
+                         clock pessimism              0.641    99.257    
+                         clock uncertainty           -0.149    99.108    
+    SLICE_X111Y50        FDCE (Setup_fdce_C_D)        0.031    99.139    SPI_i/N_Divider_0/U0/count_reg[2]
+  -------------------------------------------------------------------
+                         required time                         99.139    
+                         arrival time                          -0.712    
+  -------------------------------------------------------------------
+                         slack                                 98.427    
+
+Slack (MET) :             98.445ns  (required time - arrival time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[2]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            SPI_i/N_Divider_0/U0/count_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             clk_out1_SPI_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            100.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@100.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        1.480ns  (logic 0.606ns (40.939%)  route 0.874ns (59.061%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.384ns = ( 98.616 - 100.000 ) 
+    Source Clock Delay      (SCD):    -0.743ns
+    Clock Pessimism Removal (CPR):    0.641ns
+  Clock Uncertainty:      0.149ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.290ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  sys_clock (IN)
+                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
+    Y9                   IBUF (Prop_ibuf_I_O)         1.490     1.490 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.285     2.775    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.343    -4.568 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.855    -2.713    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101    -2.612 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=4, routed)           1.869    -0.743    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.456    -0.287 r  SPI_i/N_Divider_0/U0/count_reg[2]/Q
+                         net (fo=5, routed)           0.874     0.588    SPI_i/N_Divider_0/U0/count_reg__0[2]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I2_O)        0.150     0.738 r  SPI_i/N_Divider_0/U0/count[3]_i_1/O
+                         net (fo=1, routed)           0.000     0.738    SPI_i/N_Divider_0/U0/p_0_in[3]
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
+                                                    100.000   100.000 r  
+    Y9                                                0.000   100.000 r  sys_clock (IN)
+                         net (fo=0)                   0.000   100.000    SPI_i/clk_wiz_0/inst/clk_in1
+    Y9                   IBUF (Prop_ibuf_I_O)         1.420   101.420 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162   102.582    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.438    95.144 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.691    96.835    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    96.926 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=4, routed)           1.690    98.616    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/C
+                         clock pessimism              0.641    99.257    
+                         clock uncertainty           -0.149    99.108    
+    SLICE_X111Y50        FDCE (Setup_fdce_C_D)        0.075    99.183    SPI_i/N_Divider_0/U0/count_reg[3]
+  -------------------------------------------------------------------
+                         required time                         99.183    
+                         arrival time                          -0.738    
+  -------------------------------------------------------------------
+                         slack                                 98.445    
 
 
 
@@ -479,20 +481,20 @@ Slack (MET) :             98.471ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.309ns  (arrival time - required time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[1]/C
+Slack (MET) :             0.254ns  (arrival time - required time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Destination:            SPI_i/N_Divider_0/U0/count_reg[1]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Path Group:             clk_out1_SPI_clk_wiz_0_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@0.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        0.416ns  (logic 0.230ns (55.252%)  route 0.186ns (44.748%))
+  Data Path Delay:        0.361ns  (logic 0.183ns (50.678%)  route 0.178ns (49.322%))
   Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.786ns
-    Source Clock Delay      (SCD):    -0.550ns
-    Clock Pessimism Removal (CPR):    -0.236ns
+    Destination Clock Delay (DCD):    -0.774ns
+    Source Clock Delay      (SCD):    -0.540ns
+    Clock Pessimism Removal (CPR):    -0.234ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -506,14 +508,14 @@ Slack (MET) :             0.309ns  (arrival time - required time)
                                                      -2.421    -1.722 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.518    -1.204    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.178 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.629    -0.550    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
+                         net (fo=4, routed)           0.639    -0.540    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.128    -0.422 r  SPI_i/N_Divider_0/U0/count_reg[1]/Q
-                         net (fo=5, routed)           0.186    -0.235    SPI_i/N_Divider_0/U0/count_reg__0[1]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I3_O)        0.102    -0.133 r  SPI_i/N_Divider_0/U0/count[1]_i_1/O
-                         net (fo=1, routed)           0.000    -0.133    SPI_i/N_Divider_0/U0/p_0_in[1]
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/D
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.141    -0.399 r  SPI_i/N_Divider_0/U0/count_reg[0]/Q
+                         net (fo=5, routed)           0.178    -0.220    SPI_i/N_Divider_0/U0/count_reg__0[0]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I0_O)        0.042    -0.178 r  SPI_i/N_Divider_0/U0/count[1]_i_1/O
+                         net (fo=1, routed)           0.000    -0.178    SPI_i/N_Divider_0/U0/p_0_in[1]
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
@@ -526,30 +528,30 @@ Slack (MET) :             0.309ns  (arrival time - required time)
                                                      -3.204    -2.278 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.564    -1.714    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.685 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.899    -0.786    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
-                         clock pessimism              0.236    -0.550    
-    SLICE_X110Y70        FDCE (Hold_fdce_C_D)         0.107    -0.443    SPI_i/N_Divider_0/U0/count_reg[1]
+                         net (fo=4, routed)           0.911    -0.774    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
+                         clock pessimism              0.234    -0.540    
+    SLICE_X111Y50        FDCE (Hold_fdce_C_D)         0.107    -0.433    SPI_i/N_Divider_0/U0/count_reg[1]
   -------------------------------------------------------------------
-                         required time                          0.443    
-                         arrival time                          -0.133    
+                         required time                          0.433    
+                         arrival time                          -0.178    
   -------------------------------------------------------------------
-                         slack                                  0.309    
+                         slack                                  0.254    
 
-Slack (MET) :             0.311ns  (arrival time - required time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[1]/C
+Slack (MET) :             0.257ns  (arrival time - required time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Destination:            SPI_i/N_Divider_0/U0/count_reg[3]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Path Group:             clk_out1_SPI_clk_wiz_0_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@0.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        0.418ns  (logic 0.231ns (55.227%)  route 0.187ns (44.773%))
+  Data Path Delay:        0.364ns  (logic 0.184ns (50.535%)  route 0.180ns (49.465%))
   Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.786ns
-    Source Clock Delay      (SCD):    -0.550ns
-    Clock Pessimism Removal (CPR):    -0.236ns
+    Destination Clock Delay (DCD):    -0.774ns
+    Source Clock Delay      (SCD):    -0.540ns
+    Clock Pessimism Removal (CPR):    -0.234ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -563,71 +565,14 @@ Slack (MET) :             0.311ns  (arrival time - required time)
                                                      -2.421    -1.722 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.518    -1.204    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.178 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.629    -0.550    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
+                         net (fo=4, routed)           0.639    -0.540    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.128    -0.422 r  SPI_i/N_Divider_0/U0/count_reg[1]/Q
-                         net (fo=5, routed)           0.187    -0.234    SPI_i/N_Divider_0/U0/count_reg__0[1]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I3_O)        0.103    -0.131 r  SPI_i/N_Divider_0/U0/count[3]_i_1/O
-                         net (fo=1, routed)           0.000    -0.131    SPI_i/N_Divider_0/U0/p_0_in[3]
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
-                                                      0.000     0.000 r  
-    Y9                                                0.000     0.000 r  sys_clock (IN)
-                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
-    Y9                   IBUF (Prop_ibuf_I_O)         0.446     0.446 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.926    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.204    -2.278 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.564    -1.714    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.685 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.899    -0.786    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/C
-                         clock pessimism              0.236    -0.550    
-    SLICE_X110Y70        FDCE (Hold_fdce_C_D)         0.107    -0.443    SPI_i/N_Divider_0/U0/count_reg[3]
-  -------------------------------------------------------------------
-                         required time                          0.443    
-                         arrival time                          -0.131    
-  -------------------------------------------------------------------
-                         slack                                  0.311    
-
-Slack (MET) :             0.322ns  (arrival time - required time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[1]/C
-                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Destination:            SPI_i/N_Divider_0/U0/count_reg[2]/D
-                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
-  Path Group:             clk_out1_SPI_clk_wiz_0_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@0.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        0.414ns  (logic 0.227ns (54.794%)  route 0.187ns (45.206%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.786ns
-    Source Clock Delay      (SCD):    -0.550ns
-    Clock Pessimism Removal (CPR):    -0.236ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
-                                                      0.000     0.000 r  
-    Y9                                                0.000     0.000 r  sys_clock (IN)
-                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
-    Y9                   IBUF (Prop_ibuf_I_O)         0.258     0.258 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.698    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
-    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.421    -1.722 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.518    -1.204    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.178 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.629    -0.550    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.128    -0.422 r  SPI_i/N_Divider_0/U0/count_reg[1]/Q
-                         net (fo=5, routed)           0.187    -0.234    SPI_i/N_Divider_0/U0/count_reg__0[1]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I3_O)        0.099    -0.135 r  SPI_i/N_Divider_0/U0/count[2]_i_1/O
-                         net (fo=1, routed)           0.000    -0.135    SPI_i/N_Divider_0/U0/p_0_in[2]
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/D
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.141    -0.399 r  SPI_i/N_Divider_0/U0/count_reg[0]/Q
+                         net (fo=5, routed)           0.180    -0.218    SPI_i/N_Divider_0/U0/count_reg__0[0]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I0_O)        0.043    -0.175 r  SPI_i/N_Divider_0/U0/count[3]_i_1/O
+                         net (fo=1, routed)           0.000    -0.175    SPI_i/N_Divider_0/U0/p_0_in[3]
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
@@ -640,30 +585,30 @@ Slack (MET) :             0.322ns  (arrival time - required time)
                                                      -3.204    -2.278 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.564    -1.714    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.685 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.899    -0.786    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/C
-                         clock pessimism              0.236    -0.550    
-    SLICE_X110Y70        FDCE (Hold_fdce_C_D)         0.092    -0.458    SPI_i/N_Divider_0/U0/count_reg[2]
+                         net (fo=4, routed)           0.911    -0.774    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[3]/C
+                         clock pessimism              0.234    -0.540    
+    SLICE_X111Y50        FDCE (Hold_fdce_C_D)         0.107    -0.433    SPI_i/N_Divider_0/U0/count_reg[3]
   -------------------------------------------------------------------
-                         required time                          0.458    
-                         arrival time                          -0.135    
+                         required time                          0.433    
+                         arrival time                          -0.175    
   -------------------------------------------------------------------
-                         slack                                  0.322    
+                         slack                                  0.257    
 
-Slack (MET) :             0.322ns  (arrival time - required time)
-  Source:                 SPI_i/N_Divider_0/U0/count_reg[1]/C
+Slack (MET) :             0.273ns  (arrival time - required time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[0]/C
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Destination:            SPI_i/N_Divider_0/U0/count_reg[0]/D
                             (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
   Path Group:             clk_out1_SPI_clk_wiz_0_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@0.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
-  Data Path Delay:        0.413ns  (logic 0.227ns (54.927%)  route 0.186ns (45.073%))
+  Data Path Delay:        0.364ns  (logic 0.186ns (51.084%)  route 0.178ns (48.916%))
   Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.786ns
-    Source Clock Delay      (SCD):    -0.550ns
-    Clock Pessimism Removal (CPR):    -0.236ns
+    Destination Clock Delay (DCD):    -0.774ns
+    Source Clock Delay      (SCD):    -0.540ns
+    Clock Pessimism Removal (CPR):    -0.234ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -677,14 +622,14 @@ Slack (MET) :             0.322ns  (arrival time - required time)
                                                      -2.421    -1.722 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.518    -1.204    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.178 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.629    -0.550    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[1]/C
+                         net (fo=4, routed)           0.639    -0.540    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X110Y70        FDCE (Prop_fdce_C_Q)         0.128    -0.422 f  SPI_i/N_Divider_0/U0/count_reg[1]/Q
-                         net (fo=5, routed)           0.186    -0.235    SPI_i/N_Divider_0/U0/count_reg__0[1]
-    SLICE_X110Y70        LUT4 (Prop_lut4_I2_O)        0.099    -0.136 r  SPI_i/N_Divider_0/U0/count[0]_i_1/O
-                         net (fo=1, routed)           0.000    -0.136    SPI_i/N_Divider_0/U0/count[0]_i_1_n_0
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/D
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.141    -0.399 f  SPI_i/N_Divider_0/U0/count_reg[0]/Q
+                         net (fo=5, routed)           0.178    -0.220    SPI_i/N_Divider_0/U0/count_reg__0[0]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I3_O)        0.045    -0.175 r  SPI_i/N_Divider_0/U0/count[0]_i_1/O
+                         net (fo=1, routed)           0.000    -0.175    SPI_i/N_Divider_0/U0/count[0]_i_1_n_0
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
@@ -697,15 +642,72 @@ Slack (MET) :             0.322ns  (arrival time - required time)
                                                      -3.204    -2.278 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.564    -1.714    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.685 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
-                         net (fo=4, routed)           0.899    -0.786    SPI_i/N_Divider_0/U0/clk
-    SLICE_X110Y70        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
-                         clock pessimism              0.236    -0.550    
-    SLICE_X110Y70        FDCE (Hold_fdce_C_D)         0.091    -0.459    SPI_i/N_Divider_0/U0/count_reg[0]
+                         net (fo=4, routed)           0.911    -0.774    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
+                         clock pessimism              0.234    -0.540    
+    SLICE_X111Y50        FDCE (Hold_fdce_C_D)         0.091    -0.449    SPI_i/N_Divider_0/U0/count_reg[0]
   -------------------------------------------------------------------
-                         required time                          0.459    
-                         arrival time                          -0.136    
+                         required time                          0.449    
+                         arrival time                          -0.175    
   -------------------------------------------------------------------
-                         slack                                  0.322    
+                         slack                                  0.273    
+
+Slack (MET) :             0.274ns  (arrival time - required time)
+  Source:                 SPI_i/N_Divider_0/U0/count_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            SPI_i/N_Divider_0/U0/count_reg[2]/D
+                            (rising edge-triggered cell FDCE clocked by clk_out1_SPI_clk_wiz_0_0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             clk_out1_SPI_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_SPI_clk_wiz_0_0 rise@0.000ns - clk_out1_SPI_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.366ns  (logic 0.186ns (50.805%)  route 0.180ns (49.195%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.774ns
+    Source Clock Delay      (SCD):    -0.540ns
+    Clock Pessimism Removal (CPR):    -0.234ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  sys_clock (IN)
+                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
+    Y9                   IBUF (Prop_ibuf_I_O)         0.258     0.258 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.698    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.421    -1.722 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.518    -1.204    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.178 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=4, routed)           0.639    -0.540    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y50        FDCE (Prop_fdce_C_Q)         0.141    -0.399 r  SPI_i/N_Divider_0/U0/count_reg[0]/Q
+                         net (fo=5, routed)           0.180    -0.218    SPI_i/N_Divider_0/U0/count_reg__0[0]
+    SLICE_X111Y50        LUT4 (Prop_lut4_I0_O)        0.045    -0.173 r  SPI_i/N_Divider_0/U0/count[2]_i_1/O
+                         net (fo=1, routed)           0.000    -0.173    SPI_i/N_Divider_0/U0/p_0_in[2]
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_SPI_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    Y9                                                0.000     0.000 r  sys_clock (IN)
+                         net (fo=0)                   0.000     0.000    SPI_i/clk_wiz_0/inst/clk_in1
+    Y9                   IBUF (Prop_ibuf_I_O)         0.446     0.446 r  SPI_i/clk_wiz_0/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.926    SPI_i/clk_wiz_0/inst/clk_in1_SPI_clk_wiz_0_0
+    MMCME2_ADV_X0Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.204    -2.278 r  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.564    -1.714    SPI_i/clk_wiz_0/inst/clk_out1_SPI_clk_wiz_0_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.685 r  SPI_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=4, routed)           0.911    -0.774    SPI_i/N_Divider_0/U0/clk
+    SLICE_X111Y50        FDCE                                         r  SPI_i/N_Divider_0/U0/count_reg[2]/C
+                         clock pessimism              0.234    -0.540    
+    SLICE_X111Y50        FDCE (Hold_fdce_C_D)         0.092    -0.448    SPI_i/N_Divider_0/U0/count_reg[2]
+  -------------------------------------------------------------------
+                         required time                          0.448    
+                         arrival time                          -0.173    
+  -------------------------------------------------------------------
+                         slack                                  0.274    
 
 
 
@@ -721,27 +723,27 @@ Sources:            { SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 }
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
 Min Period        n/a     BUFG/I              n/a            2.155         100.000     97.845     BUFGCTRL_X0Y0    SPI_i/clk_wiz_0/inst/clkout1_buf/I
 Min Period        n/a     MMCME2_ADV/CLKOUT0  n/a            1.249         100.000     98.751     MMCME2_ADV_X0Y0  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[0]/C
-Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[1]/C
-Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[2]/C
-Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[3]/C
+Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[0]/C
+Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[1]/C
+Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[2]/C
+Min Period        n/a     FDCE/C              n/a            1.000         100.000     99.000     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[3]/C
 Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       100.000     113.360    MMCME2_ADV_X0Y0  SPI_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[0]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[1]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[2]/C
-Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[3]/C
-Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[0]/C
-Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[1]/C
-Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[2]/C
-Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[3]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[0]/C
-High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[0]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[1]/C
-High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[1]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[2]/C
-High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[2]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[3]/C
-High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X110Y70    SPI_i/N_Divider_0/U0/count_reg[3]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[0]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[0]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[1]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[1]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[2]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[2]/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[3]/C
+Low Pulse Width   Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[3]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[0]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[1]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[2]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[3]/C
+High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[0]/C
+High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[1]/C
+High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[2]/C
+High Pulse Width  Fast    FDCE/C              n/a            0.500         50.000      49.500     SLICE_X111Y50    SPI_i/N_Divider_0/U0/count_reg[3]/C
 
 
 

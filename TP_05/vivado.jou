@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Jan 31 15:26:48 2019
+# Process ID: 13728
+# Current directory: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14508 C:\Users\alois\OneDrive\Documents\Perso\M2_SE\VHDL\TP_05\TP_05.xpr
+# Log file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/vivado.log
+# Journal file: C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/TP_05/TP_05.srcs/sources_1/bd/design_1/design_1.bd}

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>SPI_Slave</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>SPI_RST</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>SPI_RST</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>SPI_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>SPI_CLK</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.SPI_CLK.ASSOCIATED_RESET">SPI_RST</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>SPI_Slave</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>d8c51503</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>SPI_Slave</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>d8c51503</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>SPI_Slave_tb</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>3979f92d</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>d5b54137</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>SPI_CLK</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>SPI_MOSI</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>SPI_CS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>SPI_RST</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>DATA</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.n&apos;)) - 1)">7</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>n</spirit:name>
+        <spirit:displayName>N</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.n" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">8</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sources_1/new/SPI_Slave.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_d8c51503</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sources_1/new/SPI_Slave.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim_1/new/SPI_Slave_tb.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/SPI_Slave_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_d5b54137</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>SPI_Slave_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>n</spirit:name>
+      <spirit:displayName>N</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.n" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">8</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">SPI_Slave_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/BaseIP</xilinx:taxonomy>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>SPI_Slave_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>18</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2019-02-28T16:03:45Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d81f1da_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d68d862_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46b7d669_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17cd749d_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3afd409_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b18a90c_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46327a5a_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@24f7d62c_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dea21b1_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f1b093e_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c498e22_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78a8d66e_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e2afd96_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74e58f6e_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ed632a2_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6148be69_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6aaeb627_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fd33588_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@86f98eb_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@638e478b_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b707f89_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@618d726b_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48ced6ca_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@251c7ff0_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c8fa89_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41f1f2ce_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59015b16_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6bc1ad47_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5db185ab_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cd297c5_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42ad91c2_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2706b5c7_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19d962e7_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a289ebf_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36dc13f3_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22677a59_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@276fc2bf_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5f7efc93_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a62efa0_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bcefb31_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@566c3e3c_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d2719c1_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@200a991a_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f87f594_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@370fea13_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32a5c2d5_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@110d0414_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7837e012_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38d6cd07_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56ec66f2_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30c2dcdb_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b15fb20_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f30b9ae_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30ed0c99_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44a3202c_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cd8c3a4_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f8570ec_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379f033e_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cc1417d_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59a31dba_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45725b4f_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@710aefb4_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ca9407a_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34c9ae4f_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29ae858b_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37db63c6_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59c33f93_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@772c0348_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a2b7e67_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3780af1_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2440b72a_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@283f803d_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28d778ba_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51c41e65_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28a0d92a_ARCHIVE_LOCATION">c:/users/alois/onedrive/documents/perso/m2_se/vhdl/spi/spi_slave/spi_slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57fe9769_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ad19928_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@672ca428_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d7a5163_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a23965d_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a34ff01_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c8ad8a0_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41f668ad_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2bb8f4fc_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35207721_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50a22e0e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76b0e90a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b331bb8_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53b5d6f6_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f28cba6_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4649bc56_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27281667_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e8f11b1_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ed65ac3_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b2a0c28_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@728be94c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2290ed84_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32afb0ea_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6201eba9_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3184125e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52151f95_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20935315_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@787f303a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16de79cf_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@416f8efb_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@783587ed_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d49d709_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2dfe69fe_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21bddfa9_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@734c0894_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29150d9c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7244eb14_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66c6f636_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f44351b_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15af2cd_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31e03fcf_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3762e6ad_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77a54577_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6674638e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26360aeb_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@724c599c_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70688608_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16f2e2e2_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@118d338e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ede43e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25a8c143_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6df2f792_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@359c5ec9_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2736f16a_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@70e89f4b_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a4fe1f8_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40088bc3_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@554d155e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b0db51e_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77608f17_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f7c8adf_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68a83abc_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@533826fe_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67a250e8_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9378079_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27f0098f_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a521116_ARCHIVE_LOCATION">c:/Users/alois/OneDrive/Documents/Perso/M2_SE/VHDL/SPi_Slave/SPI_Slave.srcs</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="71e3103b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0eee6d06"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="53515274"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="9de6e034"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="422b9d29"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
